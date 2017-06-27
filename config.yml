@@ -1,0 +1,23 @@
+repo:
+    code:
+        url: git@127.0.0.1:Web/code.git
+        main: develop
+        watch:
+            - production/a
+            - production/b
+            - master
+        rule: "fix(\\w*):"
+        exclude:
+            - "ba8b596 - fix(register): Fixed xxxx"
+    code2:
+        url: git@127.0.0.1:Web/code2.git
+        main: develop
+        watch:
+            - production/a
+            - production/b
+            - master
+        rule: "fix(\\w*):"
+        exclude:
+            - "e3785ce - fix(user): Fixed xxxx"
+slack:
+    token:

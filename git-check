@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+include('./gitcheck.class.php');
+
+$git = new gitcheck();
+foreach ($git->repo_list() as $repo_name => $repo_value) {
+
+	// pre_url, pre_main, pre_watch, pre_rule
+	extract($repo_value, EXTR_PREFIX_ALL,'pre');
+
+	// if does not exist
+	if (!$git->repo_exists($repo_name)) {
+		$git->repo_clone($repo_name, $pre_url);
+	}
+
+	// get commit diff result
+	$fix_commit = $git->get_fix_commit($repo_name, $pre_main, $pre_rule);
+	$need_fix_commit = $git->check_branch_fix($repo_name, $pre_watch, $fix_commit);
+	$git->display($repo_name, $need_fix_commit);
+}
