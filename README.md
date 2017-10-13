@@ -17,7 +17,7 @@ repo:
 ### Via Shell:
 
 ```shell
-php index.php
+./git-check
 ```
 
 ### Response:
