@@ -1,4 +1,4 @@
-config.yml
+### Via Config:
 
 ```
 repo:
@@ -14,8 +14,11 @@ repo:
             - "ba8b596 - fix(register): Fixed xxxxx"
 ```
 
-type `php index.php`
-$ php index.php
+### Via Shell:
+
+```shell
+php index.php
+```
 
 ```                                                                                                    ‹›
 Switched to branch 'production/a'
